@@ -1,0 +1,121 @@
+/****************menu*************/
+#menu_rs {
+    display: table;
+}
+
+ #cd-menu{
+  position: fixed;
+      top: 12vh;
+  height: 100%;
+  width: 100%;
+  padding-top: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 9;
+}
+
+#cd-menu{
+  right: -100%;
+  background: #131313;
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+}
+#cd-menu.speed-in {
+  right: 0;
+}
+#cd-menu> * {
+  padding: 0;
+}
+
+
+#close_menu {
+    /* width: 30px; */
+    transition: all 0.3s ease-in;
+    position: absolute;
+    right: 2vw;
+    top: 4vh;
+    display: block;
+    display: table;
+    height: 40px;
+    cursor: pointer;
+}
+#close_menu  span {
+    width: 40px;
+    background: #fff;
+    display: block;
+    float: left;
+    position: relative;
+    height: 2px;
+    left: 0px;
+    clear: both;
+    border-radius: 3px;
+    transition: left 0.3s ease-in;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+  #close_menu .line-one {
+        animation-name: drop-line;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out-back;
+        animation-fill-mode: both;
+        animation-delay: 0.2s;
+      }
+
+  #close_menu .line-three {
+        animation-name: up-line;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-out-back;
+        animation-fill-mode: both;
+        animation-delay: 0.2s;
+      }
+
+
+.overflow-hidden {overflow-y:hidden;}
+.fixed_bottom {
+    position: fixed;
+    bottom: 0;
+    height: 18vh;
+    width: 100%;
+}
+.top_menu_rs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.top_menu_rs #top_menu .item {
+    font-size: 1em;
+}
+
+.RadMenu .rmHorizontal .rmText {
+    padding: 0 !important;
+}
+
+.rs_lang {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    border-bottom: 1px solid #242424;
+    position: fixed;
+}
+.main_menu_responsive {
+    margin-top: 6vh;
+    width: 100%;
+    height: 64vh;
+    display: block;
+    overflow-y: scroll;
+}
+@media (max-width:500px) {
+.top_menu_rs #top_menu .item {
+    font-size: 0.9em;
+}
+
+}
+
+
+
+
+

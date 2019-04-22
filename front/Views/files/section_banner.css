@@ -1,0 +1,23 @@
+/*************sectionbanner********/
+.bannerhome {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+z-index:0
+}
+.bannerhome img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cd-section {
+    min-height: initial;
+    position: relative;
+
+}
+@media(max-width:767px) {
+.bannerhome {height: 60vh;}
+}
+
+

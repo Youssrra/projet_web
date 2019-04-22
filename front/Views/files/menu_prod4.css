@@ -1,0 +1,16 @@
+#menu_prod4 .menup { display: table; width: 100% !important; height:auto important;}
+#menu_prod4 .item {
+    margin: 0;
+    padding-left: 0 !important;
+    display: block;
+    font-family: Raleway;
+    font-size: 1em;
+    color: #dbdbdb;
+    margin-bottom: 8px;
+    text-decoration: none !important;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+#menu_prod4 .item:hover{color: #fff;}
+#menu_prod4 .item_hover{color: #fff;}
+

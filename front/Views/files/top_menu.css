@@ -1,0 +1,12 @@
+#top_menu .top_menu {display: table !important; width: 100% !important; heigt: auto !important;}
+#top_menu .item{
+    font-family: Raleway;
+    font-size: 0.95em;
+    color: #6b6b6b;
+    display: block;
+    padding: 0 2vh;
+    text-decoration: none !important;
+}
+#top_menu .item_hover{ color: #fff;}
+#top_menu .item:hover{  color: #fff;}
+

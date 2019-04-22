@@ -1,0 +1,35 @@
+#searchbox .SearchBox_1_Frame_CssClass{position: relative;
+width: 100%;}
+
+#searchbox .SearchBox_1_Title_CssClass{}
+
+#searchbox .SearchBox_1_Description_CssClass{}
+
+#searchbox .SearchBox_1_SearchField_CssClass{    font-family: Raleway;
+    font-size: 1.1em;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    outline: none;}
+
+#searchbox .SearchBox_1_SearchButton_CssClass{    color: #6b6b6b;
+    display: inline-block;
+    font: normal normal normal 40px/1 FontAwesome;
+    font-size: inherit;
+    font-size: 1.5em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none !important;}
+
+#searchbox .SearchBox_1_SearchButton_CssClass:before {
+    content: "\f002";
+}
+#searchbox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    height: 10vh;
+}
+

@@ -1,0 +1,47 @@
+#menu_rsp .menurs {display: table !important; width: 100% !important; height: auto !important;}
+#menu_rsp .RadMenu .rmVertical .rmText {
+    padding: 0;
+}
+#menu_rsp .item {
+    display: block;
+    font-family: Raleway;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    text-decoration: none !important;
+}
+#menu_rsp .subitem .rmSlide { 
+    position: relative; 
+    overflow: visible !important; 
+    display:table !important; 
+    float: none !important; 
+padding: 20px;
+    left: 0px !important; 
+    width: 100% !important; 
+    top: 0px !important; 
+    background-color: #000;
+} 
+#menu_rsp .subitem .rmGroup { 
+    padding-bottom: 1px; 
+    left: 0px !important; 
+    width: 100%; 
+    overflow: visible !important; 
+    display: block !important; 
+}
+#menu_rsp .subitem>.rmSlide>ul>li>.item {
+  font-family: Raleway;
+font-size: 1.1em;
+ color: #6b6b6b;
+  font-weight: 800;
+text-transform: capitalize;
+}
+#menu_rsp .subsubitem>.rmSlide>ul>li>.item {
+  font-family: Raleway;
+font-size: 1.1em;
+ color: #fff;
+  font-weight: 300;
+text-transform: capitalize;
+}
+#menu_rsp .subsubitem>.rmSlide {padding: 0 !important;}
+

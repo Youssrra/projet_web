@@ -1,0 +1,18 @@
+#paginator .frame_paginator {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+}
+#paginator .btn_pag {
+    background-color: #000;
+    padding: 13px 15px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: block;
+}
+#paginator .btn_pag:hover {
+    background-color: #474747;
+}
+

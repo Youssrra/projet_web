@@ -1,0 +1,88 @@
+#WG_promos .prod {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#WG_promos .frame_imge {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#WG_promos .frame_imge a{width:100%; height: 100%; display: block;    height: 80vh;}
+#WG_promos .frame_imge img{width:100%; height: 100%; display: block;}
+#WG_promos .contet_prod {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.4s ease;
+    height: 50%;
+}
+#WG_promos .title_prod {
+  font-family: Raleway;
+  font-size:2.5em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: #ededed !important;
+}
+#WG_promos .prod:hover .contet_prod{
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.67);
+}
+
+#WG_promos .box_promo {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+#WG_promos .promo {
+    display: table;
+    border: 3px solid #000;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    text-align:center;
+}
+#WG_promos .title_promo {
+    display: block;
+    text-align: center;
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 1.875em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+#WG_promos .pc_promo {
+    font-size: 3.5em;
+    line-height: 1em;
+    font-family: freestyle script;
+}
+
+@media (max-width: 767px) {
+ #WG_promos .prod {
+    display: table;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 300px;
+}
+ #WG_promos .pc_promo {
+    font-size: 2em;
+    line-height: 0.5em;
+}
+ #WG_promos .title_promo {
+    font-size: 1em;
+}
+#WG_promos .title_prod
+{
+    font-size: 2em;
+}
+}
+

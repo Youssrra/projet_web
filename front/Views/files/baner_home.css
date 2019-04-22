@@ -1,0 +1,101 @@
+#baner_home .bannercontainer{position: relative;
+width: 100% !important;
+height: 100vh !important;}
+
+#baner_home .banner{position: relative;
+width: 100% !important;
+height: 100vh !important;}
+
+#baner_home .bullets.simplebullets.round .bullet {display: block !important;}
+#baner_home .bullets {
+    left: 15px !important;
+    top: 50% !important;
+}
+#baner_home .captonp {
+    position: absolute !important;
+    width: 60% !important;
+    left: 50% !important;
+    top: 45% !important;
+    margin-left: -30% !important;
+    display: table !important;
+    text-align: center;
+}
+#baner_home .captonp h1{
+font-family: raleway;
+    font-size: 2.8em;
+    color: #fff;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+}
+#baner_home .captonp .sep_dotted {
+   position :relative;
+   height: 10px;
+width: 10px;
+background-color: #fff;
+border-radius: 100%;
+display: block;
+margin: 3vh auto 5vh;
+max-width: 100%;
+}
+#baner_home .captonp .sep_dotted:after {
+  content: "";
+  position: absolute;
+top: 50%;
+right:-310px;
+  width: 300px;
+  height: 1px;
+  background-color: #fff;
+}
+#baner_home .captonp .sep_dotted:before{
+  content: "";
+  position: absolute;
+  display: inline-block;
+   top: 50%;
+   left:-310px;
+  width: 300px;
+  height: 1px;
+  background-color: #fff;
+}
+@media (max-width: 992px) {
+#baner_home .captonp {
+    position: absolute !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 45% !important;
+    margin-left: 0 !important;
+    display: table !important;
+    text-align: center;
+}
+#baner_home .captonp h1{font-size:2em;}
+#baner_home .captonp .sep_dotted:before{   left:-210px;
+  width: 200px;}
+#baner_home .captonp .sep_dotted:after{   right:-210px;
+  width: 200px;}
+}
+@media(max-width:767px) {
+#baner_home .bannercontainer {height: 60vh !important;}
+#baner_home .banner {height: 60vh !important;}
+#baner_home .captonp .sep_dotted:before{   left:-110px;
+  width: 100px;}
+#baner_home .captonp .sep_dotted:after{   right:-110px;
+  width: 100px;}
+}
+
+@media(max-width:600px) {
+#baner_home .captonp {display: none;}
+#baner_home .captonp h1 {
+    font-size: 1.2em;
+}
+#baner_home .banner {height: 60vh !important;}
+#baner_home .captonp .sep_dotted:before{   left:-55px;
+  width: 50px;}
+#baner_home .captonp .sep_dotted:after{   right:-55px;
+  width: 50px;}
+}
+
+#baner_home .link_white {
+    text-transform: capitalize;
+}
+#baner_home .btn_white {
+    background-color: rgba(255, 255, 255, 0.78);}
+

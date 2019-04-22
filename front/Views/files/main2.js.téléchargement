@@ -1,0 +1,235 @@
+jQuery(document).ready(function($){
+	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
+	var $L = 1200,
+		$menu_navigation = $('#cd-menu'),
+		$cart_trigger = $('.link_prod'),
+		$login_trigger = $('.user_top'),
+		$inscription_trigger = $('#btn_inscrit'),
+		$forgot_trigger = $('.link_forgot'),
+		$filter = $('.fliter'),
+		$search_trigger = $('#cd-search-trigger'),
+		$hamburger_icon = $('#menu_rs'),
+		$lateral_cart = $('#cd-produit'),
+		$lateral_filter = $('#cd-filter'),
+		$lateral_login = $('#cd-login'),
+		$lateral_inscription = $('#cd-inscription'),
+		$lateral_forgot = $('#cd-forgot'),
+		$lateral_search = $('#cd-search'),
+		$shadow_layer = $('#cd-shadow-layer');
+		$shadow_layer_s = $('#cd-shadow-layer_s');
+		$shadow_layer_f = $('#cd-shadow-layer_f');
+
+	//open lateral menu on mobile
+	$hamburger_icon.on('click', function(event){
+		event.preventDefault();
+		//close cart panel (if it's open)
+		$lateral_cart.removeClass('speed-in');
+
+		toggle_panel_visibility($menu_navigation, $shadow_layer, $('body'));
+	});
+
+	//open cart
+	$cart_trigger.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_cart, $shadow_layer, $('body'));
+	});
+
+//open forgot
+	$forgot_trigger.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+		$lateral_login.removeClass('speed-in');
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_forgot, $shadow_layer, $('body'));
+	});
+	//open inscription
+	$inscription_trigger.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+		$lateral_login.removeClass('speed-in');
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_inscription, $shadow_layer, $('body'));
+	});
+	//open login
+	$login_trigger.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_login, $shadow_layer, $('body'));
+	});
+	//open search
+	$search_trigger.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_search, $shadow_layer_s, $('body'));
+	});
+	//open search
+	$filter.on('click', function(event){
+		event.preventDefault();
+		//close lateral menu (if it's open)
+		$menu_navigation.removeClass('speed-in');
+		toggle_panel_visibility($lateral_filter, $shadow_layer_f, $('body'));
+	});
+
+	//close lateral cart or lateral menu
+	$shadow_layer.on('click', function(){
+		$shadow_layer.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_cart.hasClass('speed-in') ) {
+			$lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_cart.removeClass('speed-in');
+		}
+	});
+	//close lateral cart or lateral menu
+	$shadow_layer_s.on('click', function(){
+		$shadow_layer_s.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_search.hasClass('speed-in') ) {
+			$lateral_search.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_search.removeClass('speed-in');
+		}
+	});
+
+	//close lateral cart or lateral menu
+	$shadow_layer_f.on('click', function(){
+		$shadow_layer_f.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_filter.hasClass('speed-in') ) {
+			$lateral_filter.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_filter.removeClass('speed-in');
+		}
+	});
+	
+$('#close_produit').on('click', function(){
+		$shadow_layer.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_cart.hasClass('speed-in') ) {
+			$lateral_cart.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_cart.removeClass('speed-in');
+		}
+	});
+
+$('#close_login').on('click', function(){
+		$shadow_layer.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_login.hasClass('speed-in') ) {
+			$lateral_login.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_login.removeClass('speed-in');
+		}
+	});
+$('#close_search').on('click', function(){
+		$shadow_layer.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_search.hasClass('speed-in') ) {
+			$lateral_search.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_search.removeClass('speed-in');
+		}
+	});
+$('#close_menu').on('click', function(){
+		$menu_navigation.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $menu_navigation.hasClass('speed-in') ) {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});	
+		} 
+	});
+$('#close_forgot').on('click', function(){
+		$shadow_layer.removeClass('is-visible');
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		if( $lateral_forgot.hasClass('speed-in') ) {
+			$lateral_forgot.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$menu_navigation.removeClass('speed-in');
+		} else {
+			$menu_navigation.removeClass('speed-in').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+				$('body').removeClass('overflow-hidden');
+			});
+			$lateral_forgot.removeClass('speed-in');
+		}
+	});
+	//move #main-navigation inside header on laptop
+	//insert #main-navigation after header on mobile
+	
+	$(window).on('resize', function(){
+		if( $menu_navigation.hasClass('speed-in')) {
+			$menu_navigation.removeClass('speed-in');
+			$shadow_layer.removeClass('is-visible');
+			$('body').removeClass('overflow-hidden');
+		}
+
+	});
+});
+
+function toggle_panel_visibility ($lateral_panel, $background_layer, $body) {
+	if( $lateral_panel.hasClass('speed-in') ) {
+		// firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+		$lateral_panel.removeClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+			$body.removeClass('overflow-hidden');
+		});
+		$background_layer.removeClass('is-visible');
+
+	} else {
+		$lateral_panel.addClass('speed-in').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+			$body.addClass('overflow-hidden');
+		});
+		$background_layer.addClass('is-visible');
+	}
+}
+
+function move_navigation( $navigation, $MQ) {
+	if ( $(window).width() >= $MQ ) {
+		$navigation.detach();
+		$navigation.appendTo('header');
+	} else {
+		$navigation.detach();
+		$navigation.insertAfter('header');
+	}
+}

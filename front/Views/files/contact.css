@@ -1,0 +1,27 @@
+.top_inter {
+    background-image: url(images/8.jpg);
+}
+.inter_page {
+padding: 10vh 0;
+}
+
+.title_top_inter {
+    margin: 10vh auto 0;
+}
+
+.slogan_promo {
+    text-align: center;
+    font-family: Open sans;
+    font-weight: lighter;
+    color: #fff;
+    font-size: 1.879em;
+}
+
+@media (max-width: 767px) {
+.slogan_promo {
+   font-size: 1.2em;
+}
+}
+@media (max-width: 1400px) {
+.container-fluid{    padding: 0 50px;}
+}

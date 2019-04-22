@@ -1,0 +1,124 @@
+/***************header*******/
+.fixed_header {
+ position:fixed;
+ top: -100%;
+ z-index: -1;
+ transition: all 0.3s ease;
+}
+.view_header {
+     position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+
+}
+.top_header {
+    display: table;
+    width: 100%;
+    padding: 1.5vh 0;
+        background-color: #000;
+}
+.top_menu {
+    min-width: 45%;
+}
+.top_right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+.top_menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.top_menu ul a{
+    font-family: Raleway;
+    font-size: 0.9em;
+    color: #fff;
+    display: block;
+    padding: 0 2vh;
+    text-decoration: none !important;
+}
+.bottom_header {
+  background-image: url(../img/bg_header.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  padding: 3vh 0;
+position: relative;
+z-index:2;
+}
+.nav_menu {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-family: Raleway;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+.nav_menu li a {
+    display: block;
+    padding: 0 10px;
+    color: #fefefe;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.logo {
+  display: table;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.logo img{
+    margin: 0 auto;
+}
+
+.frame_search {
+    font-size: 15px;
+    color: #6b6b6b;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.frame_search:hover{color: #fff}
+
+.header_resp {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.79);
+    display: flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 10vh;
+    height: 15vh;
+}
+
+@media (max-width: 767px) {
+.logo img {
+    margin: 0;
+}
+.logo {position:relative; z-index: 10;}
+}
+@media screen and (max-device-width: 767px) and (orientation: landscape) {
+.header_resp{height: 26vh;}
+.inter_page {
+  
+    margin-top: 58vh;
+}
+}
+
+
+
+
+
+
+
+

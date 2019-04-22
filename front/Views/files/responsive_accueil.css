@@ -1,0 +1,17 @@
+@media (max-width: 960px) {
+.cd-section {
+    height: auto !important;
+}
+.cd-section>div{
+    min-height: auto !important;
+}
+.content_section {
+ height: auto !important;
+}
+}
+
+@media (max-width:500px) {
+.top_title{font-size: 2em !important;}
+
+}
+

@@ -1,0 +1,24 @@
+#main_menu1 .menu {
+    display: flex;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0;
+    align-items: center;
+}
+#main_menu1 .menu ul { display: table !important; width: 100%;}
+#main_menu1 .menu li {    display: table-cell !important;float: none !important;}
+#main_menu1 .item {
+    display: block;
+    padding: 0 1vh;
+    color: #d1d1d1;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none !important;
+}
+#main_menu1 .item:hover{ color: #fff;}
+#main_menu1 .item_hover{ color: #fff;}
+@media (max-width: 992px) {
+#main_menu1 .item { font-size: 0.85em;    padding: 0;}
+}
+

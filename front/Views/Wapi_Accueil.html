@@ -1,0 +1,912 @@
+<?php
+
+include "../config.php";
+include "../core/inscriptionEvC.php";
+include "../../web/core/promotionC.php";
+include "../../Dali/core/pubC.php";
+
+
+$eC=new InscriptionEvC();
+$listeEvenement =$eC->getEvenementt();
+$pC=new PromotionC();
+$listePromotion =$pC->getAllPromotionToday();
+
+$pub1C=new pubC();
+$listePubs=$pub1C->afficherPubs();
+
+?>
+<!DOCTYPE html>
+<!-- saved from url=(0108)http://www.wapi.com/fr/accueil?fbclid=IwAR10ZgqqZ0WLXx1g0mJOEAGGSJmzzHAaNgSzere0ePFV-HiM6mooUHas7qw -->
+<html xmlns="http://www.w3.org/1999/xhtml" style="" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Wapi</title>
+    <link href="Wapi_Accueil.html" rel="shortcut icon" type="image/x-icon">
+
+    <script src="files/cb=gapi.loaded_0" async=""></script><script src="files/sdk.js.téléchargement" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="files/sdk.js(1).téléchargement"></script><script type="text/javascript" async="" src="files/analytics.js.téléchargement"></script><script type="text/javascript">
+        //Stop Form Submission of Enter Key Press
+        function stopRKey(evt) {
+            var evt = (evt) ? evt : ((event) ? event : null);
+            var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+            if ((evt.keyCode == 13) && (node.type == "text")) { return false; }
+            if ((evt.keyCode == 13) && (node.type == "password")) { return false; }
+        }
+        document.onkeypress = stopRKey;
+    </script>
+
+    
+<meta name="" content="meubles tunisie, meubles tunis, salon tunisie , salon et decoration , meubles Aouina, showroom meubles, meuble contemporain , une gamme haute qualité de meubles, innovation meubles,Vente meubles , Tunisie ,design mobilier, meubles de qualité ,magasin de meubles ,magasin d’ameublement ,meubles , déco ,la soukra, meuble aouina , meubles l" aouina="" ,l’aouina="" ,karray="" ,furniture="" ,design="" ,decoration="" ,salon="" de="" coin="" ,séjours="" ,chambre="" à="" coucher="" ,fauteuil="" ,chaise="" ,table="" ,à="" manger="" basse="" ,bibliothèque="" tv="" ,meuble="" bar="" ,argentiaire="" latérale="" ,="" meubles="" tunisie;="" tunis;="" salon="" tunisie="" ;="" et="" decoration'="">
+<meta name="" content="le site de wapi meubles est destiné pour présenter notre gamme de salon haut de gamme et tout type de meubles de qualité. le site de wapi meubles est destiné pour présenter notre gamme de salon haut de gamme et tout type de meubles de qualité">
+<link rel="stylesheet" href="files/bootstrap.min.css">
+<link rel="Stylesheet" href="files/layout_fr.css" type="text/css">
+<link rel="Stylesheet" href="files/font-awesome.css" type="text/css">
+<link rel="Stylesheet" href="files/accueil.css" type="text/css">
+<link rel="Stylesheet" href="files/responsive_accueil.css" type="text/css">
+<link rel="Stylesheet" href="files/footer.css" type="text/css">
+<link rel="Stylesheet" href="files/section_actualites.css" type="text/css">
+<link rel="Stylesheet" href="files/section_catalog.css" type="text/css">
+<link rel="Stylesheet" href="files/secction_promos.css" type="text/css">
+<link rel="Stylesheet" href="files/header.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_rs.css" type="text/css">
+<link rel="Stylesheet" href="files/section_banner.css" type="text/css">
+<link rel="Stylesheet" href="files/popup_site.css" type="text/css">
+<link rel="Stylesheet" href="files/WG_promos.css" type="text/css">
+<link rel="Stylesheet" href="files/WG_act_acc.css" type="text/css">
+<link rel="Stylesheet" href="files/css" type="text/css">
+<link rel="Stylesheet" href="files/apex-slider.css" type="text/css">
+<link rel="Stylesheet" href="files/baner_home.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_prod1.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_prod2.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_prod3.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_prod4.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_prod5.css" type="text/css">
+<link rel="Stylesheet" href="files/top_menu.css" type="text/css">
+<link rel="Stylesheet" href="files/main_menu1.css" type="text/css">
+<link rel="Stylesheet" href="files/main_menu2.css" type="text/css">
+<link rel="Stylesheet" href="files/menu_rsp.css" type="text/css">
+<link rel="Stylesheet" href="files/searchbox.css" type="text/css">
+<link rel="Stylesheet" href="files/langselector.css" type="text/css">
+<link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="h.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="Stylesheet" href="files/search_rs.css" type="text/css">
+<script src="files/jquery-1.9.1.min.js.téléchargement" type="text/javascript"></script>
+<script src="files/bootstrap.min.js.téléchargement"></script>
+<script src="files/modernizr.js.téléchargement" type="text/javascript"></script>
+<script src="files/jquery-2.1.4.js.téléchargement" type="text/javascript"></script>
+<script src="files/velocity.min.js.téléchargement" type="text/javascript"></script>
+<script src="files/velocity.ui.min.js.téléchargement" type="text/javascript"></script>
+<script src="files/main.js.téléchargement" type="text/javascript"></script>
+<script src="files/main2.js.téléchargement" type="text/javascript"></script>
+<script src="files/addMeta.js.téléchargement" type="text/javascript"></script><meta name="google-site-verification" content="yL774EvfiZSIbOnniSkOP5-0i_QFv4bc3v_Bgscc9MY">
+<script src="files/preview.js.téléchargement" type="text/javascript"></script>
+<script src="files/jquery.iphone-style-checkboxes.js.téléchargement" type="text/javascript"></script>
+<script src="files/jquery.flashblue-plugins.js.téléchargement" type="text/javascript"></script>
+
+<script src="files/jquery.apex-slider.js.téléchargement" type="text/javascript"></script>
+			
+		<!-- Preview (Remove) -->
+		<script type="text/javascript">
+			var bannerContainer = '.bannercontainer';
+			var banner = '.banner';
+		</script>
+
+		<!--[if lt IE 9]>
+			<script type='text/javascript'>
+				document.createElement('header');       
+				document.createElement('nav');
+			</script>
+		<![endif]-->
+
+
+
+    <script>
+        function ReplaceTagsByControls(idTag, idControl) {
+            $("#" + idTag).replaceWith($("#" + idControl));
+        }
+
+            function LoadApexSlider()
+			{
+				var api;
+				 api = $('.banner').apexSlider({
+					startWidth:0,
+					startHeight:0,
+					
+					transition:'random',
+	
+					thumbWidth:15,
+					thumbHeight:15,
+					thumbAmount:15,
+					
+					navType:'bullet',
+					navStyle:'round',
+					navArrow:'hidden',
+                    pauseOnHover: false,
+                    
+                    timerAlign:'top',					
+
+                    navigationHAlign:'left',   
+					navigationVAlign:'bottom',  
+
+					shadow:3
+				});
+			}
+
+
+        $(document).ready(function () {
+            ReplaceTagsByControls('WG_promos_Marker', 'ctl00_pnl_Products_List');
+ReplaceTagsByControls('WG_act_acc_Marker', 'ctl02_pnl_News_List');
+ReplaceTagsByControls('baner_home_Marker', 'ctl04_pnl_Banner_1');
+ReplaceTagsByControls('menu_prod1_Marker', 'ctl06_pnl_Menu_3');
+ReplaceTagsByControls('menu_prod2_Marker', 'ctl08_pnl_Menu_3');
+ReplaceTagsByControls('menu_prod3_Marker', 'ctl10_pnl_Menu_3');
+ReplaceTagsByControls('menu_prod4_Marker', 'ctl12_pnl_Menu_3');
+ReplaceTagsByControls('menu_prod5_Marker', 'ctl14_pnl_Menu_3');
+ReplaceTagsByControls('top_menu_Marker', 'ctl16_pnl_Menu_3');
+ReplaceTagsByControls('main_menu1_Marker', 'ctl18_pnl_Menu_3');
+ReplaceTagsByControls('main_menu2_Marker', 'ctl20_pnl_Menu_3');
+ReplaceTagsByControls('menu_rsp_Marker', 'ctl22_pnl_Menu_3');
+ReplaceTagsByControls('top_menu_Marker', 'ctl24_pnl_Menu_3');
+ReplaceTagsByControls('searchbox_Marker', 'ctl26_pnl_SearchBox_1');
+ReplaceTagsByControls('langselector_Marker', 'ctl28_pnl_WG_SectionSelecor');
+ReplaceTagsByControls('langselector_Marker', 'ctl30_pnl_WG_SectionSelecor');
+ReplaceTagsByControls('search_rs_Marker', 'ctl32_pnl_SearchBox_1');
+LoadApexSlider();
+
+
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+            prm.add_endRequest(function () {
+                    LoadApexSlider();
+
+                });
+        });
+    </script>
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body>
+    <form method="post" action="" id="ajax-login-form" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="files/WebResource.axd" type="text/javascript"></script>
+
+<link class="Telerik_stylesheet" type="text/css" rel="stylesheet" href="files/WebResource(1).axd">
+<script src="files/ScriptResource.axd" type="text/javascript"></script>
+<script src="files/ScriptResource(1).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(2).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(3).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(4).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(5).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(6).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(7).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(8).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(9).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(10).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(11).axd" type="text/javascript"></script>
+<script src="files/ScriptResource(12).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="DEB804C6">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAWh0Q5AwrNdsYubZHOF9diTu+No2Zrp1xR6c+kRHbaM3tVmdOmmoQaeVQU83aG3x1+7F/fTHtDZpYkkEGecmvnZUXSX5ULeIH3Sizy/BuHMpLtlS6VOdbo6bAm7mEM1ydaCxBHT4p5HfR0llzLBk8Nn">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$upnl_Widget','ctl00_upnl_Widget','tctl02$upnl_Widget','ctl02_upnl_Widget','tctl04$upnl_Widget','ctl04_upnl_Widget','tctl28$upnl_Widget','ctl28_upnl_Widget','tctl30$upnl_Widget','ctl30_upnl_Widget'], [], [], 90, '');
+//]]>
+</script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-69974026-1');
+</script>
+
+
+<!-- cd-cart -->
+<div id="cd-search">
+<div id="cd-shadow-layer_s">&nbsp;</div>
+<div class="content_search">
+<div id="ctl26_pnl_SearchBox_1" class="SearchBox_1_Frame_CssClass">
+		
+    <div id="searchbox">
+        
+        
+        <input name="ctl26$txb_SearchField" type="text" id="ctl26_txb_SearchField" class="SearchBox_1_SearchField_CssClass" onkeypress="button_click(this,&#39;ctl26_lkb_SearchButton&#39;)" placeholder="Trouver un produit ...">
+        <a id="ctl26_lkb_SearchButton" class="SearchBox_1_SearchButton_CssClass" href="javascript:__doPostBack(&#39;ctl26$lkb_SearchButton&#39;,&#39;&#39;)"></a>
+    </div>
+
+	</div>
+</div>
+</div>
+<!-- cd-search --><div><section class="cd-section" id="section2">
+<div class="" style="opacity: 1; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; transform: translateY(-100vh) scale(1);">
+<div class="absolute_header"><div class="top_header  hidden-xs">
+<div class="container nopadding">
+<div class="col-md-2 col-sm-2"><div id="ctl28_pnl_WG_SectionSelecor">
+		
+
+	</div></div>
+<div class="col-md-10 col-sm-10 hidden-xs">
+<div class="top_right">
+<div class="top_menu">
+<div id="ctl16_pnl_Menu_3">
+		
+    <div id="top_menu">
+        <div id="ctl16_pnl_Main_Frame">
+			
+            <div id="ctl16_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized top_menu" style="height: 0px; width: 0px; z-index: 7000;">
+				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/services"><span class="rmText">Services</span></a></li>
+					<li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="contact.html"><span class="rmText">Contact</span></a></li>
+				</ul><input id="ctl16_rm_Menu_3_ClientState" name="ctl16_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+			</div>
+        
+		</div>
+    </div>
+
+	</div>
+</div>
+
+ <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-sign-in-alt"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h3><b>Se connecter</b></h3></div>
+                <div class="form-group">
+                  <label for="username">Nom d'utilisateur</label>
+                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom d'utilisateur" value="" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Mot de passe</label>
+                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mot de passe" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-7">
+                      <input type="checkbox" tabindex="3" name="remember" id="remember">
+                      <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <div class="col-xs-5 pull-right">
+                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" style="background-color: #000000;" value="Connexion">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <a href="pwd_oublier.html" tabindex="5" class="forgot-password">Mot de passe oublier?</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <a href="cree_compte.html" tabindex="5" class="forgot-password">Crée un compte</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+            </div>
+          </ul>
+        </li>
+      </ul>
+ 
+
+</div>
+</div>
+</div>
+</div>
+<div class="bottom_header  hidden-xs">
+<div class="container nopadding">
+<div class="flex_div">
+<div class="menu_header1 col-md-4 col-sm-5 hidden-xs nopadding">
+<div id="ctl18_pnl_Menu_3">
+		
+    <div id="main_menu1">
+        <div id="ctl18_pnl_Main_Frame">
+			
+            <div id="ctl18_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menu" style="height: 0px; width: 0px; z-index: 7000;">
+				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">Accueil</span></a>
+					</li>
+					<li class="rmItem rmLast"><a class="rmLink rmRootLink  item  link_prod" href="http://www.wapi.com/fr/produits/produits"><span class="rmText">cuisine</span></a></li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">salon</span></a>
+					</li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">meubles</span></a>
+					</li>
+
+				</ul><input id="ctl18_rm_Menu_3_ClientState" name="ctl18_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+			</div>
+        
+		</div>
+    </div>
+
+	</div>
+</div>
+<div class="col-md-4 nopadding col-sm-2 col-xs-10">
+<a href="Wapi_Accueil.html" class="logo"><img alt="" src="images/logo.png" class="img-responsive" height="50"></a>
+</div>
+<div class="menu_header2 col-md-4 col-sm-5 hidden-xs nopadding">
+<div id="ctl20_pnl_Menu_3">
+		
+    <div id="main_menu2">
+        <div id="ctl20_pnl_Main_Frame">
+			
+            <div id="ctl20_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menu" style="height: 0px; width: 0px; z-index: 7000;">
+				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">accessoire & decoration</span></a></li>
+					<li class="rmItem "><a class="rmLink rmRootLink item" href="Promotions.html"><span class="rmText">Promotions</span></a></li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">dressing</span></a></li>
+					
+				</ul><input id="ctl20_rm_Menu_3_ClientState" name="ctl20_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+			</div>
+        
+		</div>
+    </div>
+
+	</div>
+</div>
+</div>
+</div>
+</div>
+<div class="visible-xs-block ">
+<div class="header_resp">
+<div class="col-xs-6">
+<a href="Wapi_Accueil.html" class="logo"><img alt="" src="images/logo.png" class="img-responsive" height="50" 
+	"></a>
+</div>
+<div class="col-xs-6">
+<a id="menu_rs" class="menu_resp pull-right" href="Wapi_Accueil.html">
+<div class="nav-trigger">
+<span class="line-one"></span>
+<span class="line-two"></span>
+<span class="line-three"></span>
+</div>
+</a></div>
+</div>
+</div></div>
+<div class="bannerhome">
+<div id="ctl04_pnl_Banner_1">
+		
+    <div id="ctl04_upnl_Widget">
+			
+            <div id="baner_home">
+                <div class="bannercontainer responsive" style="overflow: visible;">
+                    <div class="banner apex-slider" id="apex-slider-263" style="visibility: visible; height: 657px;">
+                        <ul style="overflow: hidden; width: 100%; height: 100%; max-height: none;">
+<li data-thumb="images/1.jpg" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;">
+<div class="slotholder"><img src="images/1.jpg" data-lazyload="images/1.jpg" class="defaultimg" style="opacity: 0; width: 1349px; height: 759px;"></div>
+<div class="caption captonp sft start" data-x="0" data-y="0" data-speed="1500" data-start="500" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px 0px 0px -250.067px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: 273.594px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"><h1>une sélection <br>
+des chambres hauts de gamme </h1>
+<div class="sep_dotted">&nbsp;</div>
+<div class="btn_white btn_center ">
+<a href="http://www.wapi.com/fr/produits/produits" class="link_white">Plus d'information</a>
+</div></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 10px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+
+</li>
+<li data-thumb="images/2.jpg" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;">
+<div class="slotholder"><img src="images/2.jpg" data-lazyload="images/2.jpg" class="defaultimg" style="opacity: 0; width: 1349px; height: 759px;"></div>
+<div class="caption captonp sft start" data-x="0" data-y="0" data-speed="1500" data-start="500" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px 0px 0px -404px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 674.5px; top: 273.594px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"><h1>une sélection <br>
+des salons hauts de gamme </h1>
+<div class="sep_dotted">&nbsp;</div>
+<div class="btn_white btn_center ">
+<a href="http://www.wapi.com/fr/produits/sejour" class="link_white">Plus d'information</a>
+</div></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+<div class="caption  sft start" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; opacity: 0; left: 0px; top: -50px; visibility: visible; transform: scale(1, 1) rotate(0deg) translate(0px, 0px) skewX(0deg) rotateX(0deg) rotateY(0deg); filter: inherit;"></div>
+
+</li>
+<li data-thumb="images/3.jpg" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
+<div class="slotholder"><img src="images/3.jpg" data-lazyload="images/3.jpg" class="defaultimg" style="opacity: 1; width: 1349px; height: 759px;"></div>
+<div class="caption captonp sft start noFilterClass" data-x="0" data-y="0" data-speed="1500" data-start="500" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px 0px 0px -404px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"><h1>une sélection <br>
+des salons hauts de gamme </h1>
+<div class="sep_dotted">&nbsp;</div>
+<div class="btn_white btn_center ">
+<a href="http://www.wapi.com/fr/produits/canapes" class="link_white">Plus d'information</a>
+</div></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+<div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
+
+</li>
+</ul>
+                    <div class="preloader" style="display: none;"></div><div class="timer timer-top" style="width: 68.481%; visibility: visible; overflow: hidden;"></div></div>
+                <div class="apex-slider-shadow apex-slider-shadow3" style="width: 1349px;"></div><div class="bullets simplebullets round" style="visibility: visible; width: 48px; left: 650.5px; bottom: 9.25419px;"><div class="bullet">1</div><div class="bullet">2</div><div class="bullet selected">3</div><div style="clear:both"></div></div><div style="visibility: hidden; opacity: 1;" class="leftarrow arrows round"></div><div style="visibility: hidden; opacity: 1;" class="rightarrow arrows round"></div></div>
+            </div>
+        
+		</div>
+
+	</div>
+</div>
+</div>
+</section>
+
+<section class="cd-section visible">
+<div class="" style="opacity: 1; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; transform: translateY(-7.89474vh) scale(1);">
+<div class="top_title_frame">
+<div class="top_title">
+top <span class="bold"> promos</span>
+</div>
+</div>
+<div class="content_section">
+<div id="ctl00_pnl_Products_List">
+		
+    <div id="ctl00_upnl_Widget">
+			
+            <div id="WG_promos">
+                <div id="ctl00_pnl_Main_Frame">
+
+                
+			</div>
+                <div id="ctl00_pnl_Widget_Frame">
+				<div class="flex_div_strech"><div class="col-md-6 col-sm-6 col-xs-12 nopadding">
+					<div class="prod">
+						<div class="frame_imge">
+							<a href="http://www.wapi.com/fr/produit/Table-basse-RIVERA"><img class="img_prod img-responsive" src="files/Table RIVERA.jpg"></a>
+						</div><div class="contet_prod">
+							<a class="title_prod" href="http://www.wapi.com/fr/produit/Table-basse-RIVERA">Table basse RIVERA</a>
+						</div><div class="box_promo">
+
+						</div>
+					</div>
+				</div></div>
+			</div>
+            </div>
+        
+		</div>
+
+	</div>
+</div>
+</div>
+</section>
+
+
+<!---------------------------------- PUB ------------------------------------------ --->
+
+<section class="cd-section">
+<div class="" style="opacity: 1; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; transform: translateY(100vh) scale(1);">
+<div class="top_title_frame">
+<div class="top_title">
+Nos <span class="bold"> publicité </span>
+</div>
+</div>
+<div class="content_section">
+<div id="ctl02_pnl_News_List">
+        
+    <div id="ctl02_upnl_Widget">
+             <?PHP
+             foreach($listePubs as $row){
+           
+         ?>
+            <div id="WG_act_acc">            
+                <div id="ctl02_pnl_Widget_Frame">
+                <div class="act_item ">
+                    <div class="flex_div_strech">
+                        <div class="col-md-7 col-sm-6 hidden-xs nopadding img_act">
+                            <div>
+                                <a href="http://www.wapi.com/fr/actualite/act2">
+                                    
+                                    <img src="(<?PHP echo $row['image']; ?>);">
+                                    
+                                </a>
+                            </div>
+                        </div><div class="col-md-5 col-sm-6 col-xs-12 nopadding frame_contet_act">
+                            <div class="flex_div flex_column">
+                              <div class="frame_title_act">
+                                    <a id="ctl02_hlk_Title_0" class="title_act" href="http://www.wapi.com/fr/actualite/act2">Publicitée : <?php echo $row['titre_pub'];?> </a><div class="sep_dotted_black">
+
+                                    </div>
+                                </div><span id="ctl02_lbl_ShortDescription_0" class="desc_act"><p><?php echo $row['desc_pub'];?></p>
+<p>Wapi</p></span><div class="clear">
+
+                        <!----------------- LIKE BUTTON --------------->
+
+  <form method="POST" action="nombrelike.php?id=<?PHP echo $row['id_pub'];?>" >
+                                        <button  style="margin-top: 20px;" type="submit" name="like" class="btn karl-btn" data-animation="fadeInUp" data-delay="1s" data-duration="500ms" >like</button>
+                                    </form>
+
+
+
+                                </div><div class="btn_white_border btn_center">
+                                    <a class="link_white_border" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >LI</a>
+
+                                </div>
+
+
+                                <!-- Modal -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                <hr>
+           <?PHP
+}
+?>
+        </div>
+
+    </div>
+</div>
+</div>
+</section>
+
+
+
+
+
+<!---------------------------------- EVENEMENT ------------------------------------------ --->
+
+
+
+
+
+
+
+<section class="cd-section">
+<div class="" style="opacity: 1; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; transform: translateY(100vh) scale(1);">
+<div class="top_title_frame">
+<div class="top_title">
+Nos <span class="bold"> actualités</span>
+</div>
+</div>
+<div class="content_section">
+<div id="ctl02_pnl_News_List">
+		
+    <div id="ctl02_upnl_Widget">
+			 <?PHP
+             foreach($listeEvenement as $row){
+           
+         ?>
+            <div id="WG_act_acc">            
+                <div id="ctl02_pnl_Widget_Frame">
+				<div class="act_item ">
+					<div class="flex_div_strech">
+						<div class="col-md-7 col-sm-6 hidden-xs nopadding img_act">
+							<div>
+								<a href="http://www.wapi.com/fr/actualite/act2">
+									 <?php 
+              $image_id=$row['image'] ;
+         	echo '<img class="img-responsive" alt="a" src="'.$image_id.'" />' ?>
+
+								</a>
+							</div>
+						</div><div class="col-md-5 col-sm-6 col-xs-12 nopadding frame_contet_act">
+							<div class="flex_div flex_column">
+								<div class="date_act">
+									<?php 
+      	$td=date("Y-m-d") ;
+		$dd=$td ;
+		list($y, $m, $d) = explode('-', $dd);
+				$dd=$row['date_d'];
+			list($y, $m, $d) = explode('-', $dd);
+							    
+?>
+									<span id="ctl02_lbl_DateDay_0"><?php echo "$d"; ?></span><span> /</span><span id="ctl02_lbl_DateMonth_0"><?php echo"$m";?></span><span> / </span><span id="ctl02_lbl_DateYear_0"><?php echo"$y";?></span>
+								</div><div class="frame_title_act">
+									<a id="ctl02_hlk_Title_0" class="title_act" href="http://www.wapi.com/fr/actualite/act2">Événement : <?php echo $row['nom'];?> </a><div class="sep_dotted_black">
+
+									</div>
+								</div><span id="ctl02_lbl_ShortDescription_0" class="desc_act"><p><?php echo $row['description'];?></p>
+<p>Wapi</p></span><div class="clear">
+
+								</div><div class="btn_white_border btn_center">
+									<a class="link_white_border" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >Voir détails</a>
+
+								</div>
+                                <!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Evenement</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                
+
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td><strong>Nom</strong></td>
+                                                    <td><?php echo $row['nom'];?></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Option</strong></td>
+                                                    <td><?php echo $row['optionn'];?></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Cloture des inscription</strong></td>
+                                                    <td><?php echo $row['fin_insc'];?></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Date de debut</strong></td>
+                                                    <td><?php echo $row['date_d'];?></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td><strong>Date de fin<strong></td>
+                                                    <td><?php echo $row['date_f'];?></td>
+                                                </tr>
+
+                                                <td><h4>Lieu</h4></div><td>
+
+                                                <tr>
+                                                    <td><strong>Ville</strong></td>
+                                                    <td><?php echo $row['ville'];?></td>
+                                                </tr>
+                                                
+
+                                                <tr>
+                                                    <td><strong>Etat/Provence</strong></td>
+                                                    <td><?php echo $row['etat'];?></td>
+                                                </tr>
+                        
+                                                <tr>
+                                                    <td><strong>Addresse</strong></td>
+                                                    <td><?php echo $row['addrese'];?></td>
+                                                </tr>
+                                                <td><h4>Information suplementaire</h4></div><td>
+                                                    <tr>
+                                                    <br>
+                                                    <td><strong>Dercription</strong></td>
+                                                    <td><?php echo $row['description'];?></td>
+                                                </tr>
+ 
+                                            
+                                                        </tbody>
+                                        </table>
+                                    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <a href="inscription_evenement.php?detid=<?php echo $row['id'];?> "
+                                     target="popup" 
+                                    onclick="window.open('inscription_evenement.php?detid=<?php echo $row['id'];?>','popup','width=600,height=600'); return false;">
+        <button type="button" class="btn btn-primary" id="insert" name="submit" style=" background-color: #FFFFFF ; color: #000000 "  >Inscription</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+					</div>
+				</div>
+			</div>
+            </div>
+            	<hr>
+           <?PHP
+}
+?>
+		</div>
+
+	</div>
+</div>
+</div>
+</section>
+</div><div class="footer">
+<div class="top_footer">
+<div class="coor_footer">
+<p class="title_footer">Contactez-nous</p>
+<div class="nums bold">
+<p>+216 94 305 426<br></p>
+</div>
+<p class="coor_mail">wapi.commercial@gmail.com</p>
+</div>
+<div class="sep_dotted">&nbsp;</div>
+<div class="rs_footer">
+<p class="title_footer">Suivez nous sur </p>
+<div class="list_rs">
+<a href="https://www.facebook.com/Wapi-1909964879236073/" target="_blank" class="item_rs_footer"><em class="fab fa-facebook-f" aria-hidden="true"></em></a>
+
+</div>
+</div>
+</div>
+<div class="bottom_footer">
+<div class="copyright">
+Copyright © 2019 Wappi , Tous droits réservés. Site Web réalisé par Mind Blowers.
+</div>
+</div>
+<div id="cd-menu">
+<div class="rs_lang">
+<div class="fixed_bottom">
+<div class="search_resp"><div id="ctl32_pnl_SearchBox_1" class="SearchBox_1_Frame_CssClass">
+		
+    <div id="search_rs">
+        
+        
+        <input name="ctl32$txb_SearchField" type="text" id="ctl32_txb_SearchField" class="SearchBox_1_SearchField_CssClass" onkeypress="button_click(this,&#39;ctl32_lkb_SearchButton&#39;)" placeholder="Chercher ..">
+        <a id="ctl32_lkb_SearchButton" class="SearchBox_1_SearchButton_CssClass" href="javascript:__doPostBack(&#39;ctl32$lkb_SearchButton&#39;,&#39;&#39;)"></a>
+    </div>
+
+	</div></div>
+<div class="top_menu_rs"><div id="ctl24_pnl_Menu_3">
+		
+    <div id="top_menu">
+        <div id="ctl24_pnl_Main_Frame">
+			
+            <div id="ctl24_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized top_menu" style="height: 0px; width: 0px; z-index: 7000;">
+				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/services"><span class="rmText">Services</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.wapi.com/actualites"><span class="rmText">Actualités</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="contact.html"><span class="rmText">Contact</span></a></li>
+				</ul><input id="ctl24_rm_Menu_3_ClientState" name="ctl24_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+			</div>
+        
+		</div>
+    </div>
+
+	</div></div>
+</div>
+</div>
+
+        <div id="pnl_Widgets" style="overflow-y:scroll;">
+	
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="files/d_vbiawPdxB.html" style="border: none;" __idm_frm__="469"></iframe></div><div></div></div></div>
+<script>
+    (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5&appId=591378830942563";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script type="text/javascript">
+    function pageLoad() {
+        $.getScript("http://platform.twitter.com/widgets.js");
+        $.getScript("https://apis.google.com/js/plusone.js");
+        FB.XFBML.parse();
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function button_click(objTextBox, objBtnID) {
+        if (window.event.keyCode == 13) {
+            document.getElementById(objBtnID).focus();
+            document.getElementById(objBtnID).click();
+        }
+    }
+</script>
+
+
+
+
+<script>
+    function button_click(objTextBox, objBtnID) {
+        if (window.event.keyCode == 13) {
+            document.getElementById(objBtnID).focus();
+            document.getElementById(objBtnID).click();
+        }
+    }
+</script>
+
+
+
+</div>
+
+        <span id="lbl_Error"></span>
+        
+
+        <div id="updateProgress" style="display:none;" role="status" aria-hidden="true">
+	
+                <div class="FrontOfficeLoader"></div>
+            
+</div>
+
+        <style>
+            .sys-debugger {position: fixed;display: inline-block;width: 100%;min-height: 150px;border: 1px solid #808080;bottom: 0;font-size: 0;}
+            .sys-debugger-widgets {display: inline-block;width: 50%;min-height: 150px;border: 1px solid #808080;bottom: 0;overflow: scroll;box-sizing: border-box;font-size: 12px;}
+            .sys-debugger-sharedvariables {display: inline-block;width: 50%;min-height: 150px;border: 1px solid #808080;bottom: 0;overflow: scroll;box-sizing: border-box;font-size: 12px;}
+            .FrontOfficeLoader {opacity: 0.7;position: fixed;left: 0px;top: 0px;width: 100%;height: 100%;z-index: 9999;background: url('/Images/App_002/Web/FrontOffice/FrontOfficeLoader.gif') 50% 50% no-repeat rgb(249,249,249);}
+        </style>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_flow":0,"_skin":"Metro","clientStateFieldID":"ctl06_rm_Menu_3_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"navigateUrl":"/fr/produits/canapes","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/canapes-angle","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/fauteuils","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/pouf","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/bibliotheques","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/tables_basses","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/tables_appoint","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/consoles","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/meubles-tv","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/meubles-bar","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"showToggleHandle":true}, null, null, $get("ctl06_rm_Menu_3"));
+});
+
+
+
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_skin":"Metro","clientStateFieldID":"ctl16_rm_Menu_3_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"navigateUrl":"/fr/services","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/actualites","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/espace_pro","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/contact","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"showToggleHandle":true}, null, null, $get("ctl16_rm_Menu_3"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_selectedItemIndex":"0","_selectedValue":"Accueil","_skin":"Metro","clientStateFieldID":"ctl18_rm_Menu_3_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"selected":true,"navigateUrl":"/fr/accueil","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/presentation","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/produits","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":" item  link_prod"}],"showToggleHandle":true}, null, null, $get("ctl18_rm_Menu_3"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadMenu, {"_childListElementCssClass":null,"_flow":0,"_selectedItemIndex":"0","_selectedValue":"Accueil","_skin":"Metro","clientStateFieldID":"ctl22_rm_Menu_3_ClientState","collapseAnimation":"{\"duration\":450}","expandAnimation":"{\"duration\":450}","itemData":[{"selected":true,"navigateUrl":"/fr/accueil","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/presentation","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"items":[{"items":[{"navigateUrl":"/fr/produits/canapes","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/canapes-angle","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/fauteuils","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/pouf","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/bibliotheques","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/tables_basses","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/tables_appoint","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/consoles","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/meubles-tv","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/meubles-bar","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"navigateUrl":"/fr/produits/sejour","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subsubitem","cssClass":"item"},{"items":[{"navigateUrl":"/fr/produits/tables-de-repas","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/chaises","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/bahuts","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"navigateUrl":"/fr/produits/salle_manger","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subsubitem","cssClass":"item"},{"items":[{"navigateUrl":"/fr/produits/chambre_a_coucher","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/lit","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/table_nuit","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/semainiers","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"navigateUrl":"/fr/produits/espace_nuit","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subsubitem","cssClass":"item"},{"items":[{"navigateUrl":"/fr/produits/bureaux","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/miroirs","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/tableaux","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/coussins","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"navigateUrl":"/fr/produits/accessoires","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subsubitem","cssClass":"item"},{"items":[{"navigateUrl":"/fr/produits/bar","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/chaise_long","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/produits/chaise_bar","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"navigateUrl":"/fr/produits/mobilier-exterieur","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subsubitem","cssClass":"item"}],"disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","outerCssClass":"subitem","cssClass":"item"},{"navigateUrl":"/fr/showroom","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/promotions","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"},{"navigateUrl":"/fr/nos_references","disabledCssClass":"","expandedCssClass":"item_hover","focusedCssClass":"","selectedCssClass":"item_hover","clickedCssClass":"item_hover","cssClass":"item"}],"showToggleHandle":true}, null, null, $get("ctl22_rm_Menu_3"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":500,"dynamicLayout":true}, null, null, $get("updateProgress"));
+});
+//]]>
+</script>
+</form>
+
+
+</body></html>

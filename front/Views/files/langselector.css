@@ -1,0 +1,28 @@
+#langselector .lang {
+    font-size: 12px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    display: block;
+    outline: none;
+    margin-bottom: 5px;
+    padding: 0;
+}
+#langselector .lang_hover {color: #f7f7f7;}
+#langselector .lang:hover {color: #f7f7f7;}
+#langselector .list_lang {
+    background-color: transparent;
+    width: 38px;
+    border-radius: 0;
+}
+
+#langselector .icon_lang {float: none;}
+
+@media (max-width: 768px){
+#langselector .lang {
+    margin: 0 20px;
+}
+
+}
+
+
