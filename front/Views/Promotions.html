@@ -3,6 +3,12 @@ include "../../web/core/promotionC.php";
 include "../config.php";
 $pC=new PromotionC();
 $listePromotion =$pC->getAllPromotion();
+if(isset($_POST['search']))
+{
+    $keywords = $_POST['keywords'];
+    $listePromotion=$pC->getAllPromotionS($keywords);
+}
+
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0042)http://www.meubleskarray.com/fr/promotions -->
@@ -26,6 +32,7 @@ $listePromotion =$pC->getAllPromotion();
     
 <meta name="" content="&quot;promotion meubles , promotion meubles tunis , promotion meubles karray , promotion karray furniture , promotions karray furniture , promotion meuble tunisie , promotion meuble soukra , promotion meubles l" aouina,="" promotion="" meubles="" ,="" tunis="" promotions="" karray="" meuble="" tunisie="" soukra="" l'aouina="" "="" tunisie;="" tunis;="" salon="" ;="" et="" decoration'="">
 <link rel="stylesheet" href="files/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/recherche.css">
 <link rel="Stylesheet" href="files/layout_fr.css" type="text/css">
 <link rel="Stylesheet" href="files/font-awesome.css" type="text/css">
 <link rel="Stylesheet" href="files/interne.css" type="text/css">
@@ -382,6 +389,32 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 </div>
 <div class="inter_page">
 <div class="container-fluid">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="department-news-header">
+                <a href="#">Resources</a>
+               <form class="form-header" action="" method="POST">
+                <span class="archive-link pull-right header-search-span">
+                    <span class="header-search">
+                        <input type="text" class="form-control input-sm" maxlength="64" placeholder="Chercher.." name="keywords" />
+                        <button type="submit" name="search" class="btn-srch"><i class="fa fa-search"></i></button>
+                    </span>
+                </span></form>
+            </h3>
+        </div>
+    </div>
+</div>
+  
+                            
+                                
+                            
 <div class="content_inter">
 <div class="clear">&nbsp;</div>
 <div class="frame_service">
