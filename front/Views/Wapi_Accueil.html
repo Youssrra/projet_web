@@ -2,12 +2,13 @@
 include "../config.php";
 include "../core/inscriptionEvC.php";
 include "../../web/core/promotionC.php";
-
+include "../../Dali/core/pubC.php";
 
 $eC=new InscriptionEvC();
 $listeEvenement =$eC->getEvenementt();
-$pC=new PromotionC();
-$listePromotion =$pC->getAllPromotionToday();
+
+$puC=new pubC();
+$listepub =$puC->afficherPubs();
 
 ?>
 <!DOCTYPE html>
@@ -525,62 +526,74 @@ top <span class="bold"> promos</span>
 Nos <span class="bold"> actualités</span>
 </div>
 </div>
+<section class="cd-section">
 <div class="content_section" align="center">
-
-   
+<div id="ctl02_pnl_News_List">
         
-            <div class="mycarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators" >
-                    <?php
-                    $con=mysqli_connect("localhost","root","","promootion_evenement") ;
-                    $a=0 ;
-                    $query="SELECT * FROM pub" ;
-                    $sql=mysqli_query($con,$query) ;
-                    while ($row=mysqli_fetch_array($sql))
-                    {
-                        ?>
-                        <li data-target="#mycarousel" data-slide-to="<?php echo $a++ ;?>"></li>
-                    
-                    <?php
-                    }
-                    ?>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <?php 
-                    $queryy="SELECT * FROM pub" ;
-                    $sqll=mysqli_query($con,$queryy) ;
-                    while ($img=mysqli_fetch_array($sqll))
-                    {
-                        ?>
-                        <div class="item">
-                            <img src="image_pub/<?php echo $img['image'] ; ?>" class="img responsive" alt="<?PHP echo $img['titre_pub'] ;?>">
+    <div id="ctl02_upnl_Widget">
+             <?PHP
+             foreach($listepub as $row){
+           
+         ?>
+            <div id="WG_act_acc">            
+                <div id="ctl02_pnl_Widget_Frame">
+                <div class="act_item ">
+                    <div class="flex_div_strech">
+                        <div class="col-md-7 col-sm-6 hidden-xs nopadding img_act">
+                            <div>
+                                <a href="http://www.wapi.com/fr/actualite/act2">
+                                
+
+            echo '<img class="img-responsive" alt="<?php echo $row['image'] ; ?>"" src="image_pub/<?php echo $row['image'] ; ?>" />' ?>
+
+                                </a>
+                            
+                            </div>
+                        </div><div class="col-md-5 col-sm-6 col-xs-12 nopadding frame_contet_act">
+                            <div class="flex_div flex_column">
+                                <div class="date_act">
+                                    <?php 
+        $td=date("Y-m-d") ;
+        $dd=$td ;
+        list($y, $m, $d) = explode('-', $dd);
+                $dd=$row['date_d_pub'];
+            list($y, $m, $d) = explode('-', $dd);
+                                
+?>
+                                    <span id="ctl02_lbl_DateDay_0"><?php echo "$d"; ?></span><span> /</span><span id="ctl02_lbl_DateMonth_0"><?php echo"$m";?></span><span> / </span><span id="ctl02_lbl_DateYear_0"><?php echo"$y";?></span>
+                                </div><div class="frame_title_act">
+                                    <a id="ctl02_hlk_Title_0" class="title_act" href="http://www.wapi.com/fr/actualite/act2"><?php echo $row['titre_pub'];?> </a><div class="sep_dotted_black">
+
+                                    </div>
+                                </div><span id="ctl02_lbl_ShortDescription_0" class="desc_act"><p><?php echo $row['desc_pub'];?></p>
+<p>Wapi</p></span><div class="clear">
+
+                                </div><div class="btn_white_border btn_center">
+                                    <a class="link_white_border" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >Like</a>
+
+                                </div>
+                                <!-- Modal -->
+                    </div>
+
                         </div>
-                    <?php
-                    }
-                    ?>                  
+
+                    </div>
                 </div>
-                <a href="left carousel-control" href="#mycarousel" role="button" data-slide="prev"></a>
-                <a href="right carousel-control" href="#mycarousel" role="button" data-slide="next"></a>
-                
+                    </div>
+                </div>
             </div>
-            
+            </div>
+                <hr>
+           <?PHP
+}
+?>
         </div>
-    </div>
-<script type="text/javascript">
-    $(document).ready(function(e)
-    {
-        $('.carousel-indicators li:nth-child(1)').addClass('active') ;
-        $('.item:nth-child(1)').addClass('active') ;
-    });
-</script>
-
-
-
-     </div>
 
     </div>
-
+</div>
+</div>
 </section>
+</div>
 </div>
 
 
