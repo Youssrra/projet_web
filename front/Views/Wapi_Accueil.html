@@ -10,6 +10,18 @@ $listeEvenement =$eC->getEvenementt();
 $puC=new pubC();
 $listepub =$puC->afficherPubs();
 
+
+
+include "../entities/produit.php";
+include "../core/produitC.php";
+include_once "../core/commandeC.php";
+session_start();
+$_SESSION['id']=2;
+if(isset($_SESSION['id']))
+{
+  $produit=new produitC;
+  $count=$produit->countpanier($_SESSION['id']);
+}
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0108)http://www.wapi.com/fr/accueil?fbclid=IwAR10ZgqqZ0WLXx1g0mJOEAGGSJmzzHAaNgSzere0ePFV-HiM6mooUHas7qw -->
@@ -264,7 +276,28 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
 					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/services"><span class="rmText">Services</span></a></li>
 					<li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="contact.html"><span class="rmText">Contact</span></a></li>
-				</ul><input id="ctl16_rm_Menu_3_ClientState" name="ctl16_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+
+                    <li class="rmItem rmLast">
+    <a class="rmLink rmRootLink item" href="checkout.html"><span class="rmText">Panier</span></a>
+</li>
+
+                    <li class="rmItem rmFirst">
+<a href="checkout.html">
+<span class="rmText"><h5> (<span id="simpleCart_quantity" class="simpleCart_quantity">
+                        <?php
+                          $produit=new produitC;
+                          $count=$produit->countpanier($_SESSION['id']);
+                          foreach($count as $row)
+                            {
+                              echo $row["cnt"];
+                            }
+                          ?>
+                    </span> items)<img src="images/b.png" height="25" width="25" alt=""></h5></span>
+</a>
+<div class="clearfix"> </div>
+</li>
+				</ul>
+                <input id="ctl16_rm_Menu_3_ClientState" name="ctl16_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
 			</div>
         
 		</div>
