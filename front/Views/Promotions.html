@@ -8,6 +8,81 @@ if(isset($_POST['search']))
     $keywords = $_POST['keywords'];
     $listePromotion=$pC->getAllPromotionS($keywords);
 }
+include "../entities/produit.php";
+include "../core/produitC.php";
+
+session_start();
+$_SESSION['id']=2;
+if(isset($_SESSION['id']))
+{
+if(isset($_POST['ajouterproduit1']) && (isset ($_POST['q1'])))
+{ 
+  $q1=$_POST['q1'];
+  $id_display=$_GET["ida"];
+  $produit1C=new produitC();
+  $produit1=$produit1C->recupererproduit_ajout($id_display);
+  $info=$produit1->fetch();
+  $produit1=new produit($info["id"],$info["nom"],$info["prix"],$info["quantite"],$info["categorie"]);
+  $quantitedisponible=$produit1->get_quantite();
+  $verif=0;
+  if($q1>$quantitedisponible)
+  {
+    echo "<script>alert(\"La quantité demandée n'est pas disponible dans le stock\")</script>";
+    $verif=1;
+  }
+
+  if($q1<0)
+  {
+    echo "<script>alert(\"La quantité insérée est incorrecte\")</script>";
+    $verif=1;
+  }
+  
+  if($verif==0)
+  {
+    $result=$produit1C->verifierexitenceprod($_SESSION['id'],$produit1->get_id());
+    $info=$result->fetch();
+    $existence=$info["cnt"];
+    if($existence==0)
+    {
+      $produit1->set_quantite($q1);
+      $produit1C->ajouteraupanier($produit1,$_SESSION['id']);
+    }
+    else
+    {
+      echo "<script>alert(\"Le produit existe déja dans le panier\")</script>"; 
+    }
+    
+  }
+  
+}
+
+
+if(isset($_POST['ajouterwishlist2']))
+{ 
+  $id_display=$_GET["wishlist"];
+  $produit1C=new produitC();
+  $produit1=$produit1C->recupererproduit_ajout($id_display);
+  $info=$produit1->fetch();
+  $produit1=new produit($info["id"],$info["nom"],$info["prix"],$info["quantite"],$info["categorie"]);
+  $verif=0;
+  if($verif==0)
+  {
+    $result=$produit1C->verifierexitenceprod1($_SESSION['id'],$produit1->get_id());
+    $info=$result->fetch();
+    $existence=$info["cnt"];
+    if($existence==0)
+    {
+      
+      $produit1C->ajouterwishlist($produit1,$_SESSION['id']);
+    }
+    else
+    {
+      echo "<script>alert(\"Le produit existe déja dans le panfnsdfkjsier\")</script>"; 
+    }
+    
+  }
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -29,8 +104,6 @@ if(isset($_POST['search']))
         document.onkeypress = stopRKey;
     </script>
 
-    
-<meta name="" content="&quot;promotion meubles , promotion meubles tunis , promotion meubles karray , promotion karray furniture , promotions karray furniture , promotion meuble tunisie , promotion meuble soukra , promotion meubles l" aouina,="" promotion="" meubles="" ,="" tunis="" promotions="" karray="" meuble="" tunisie="" soukra="" l'aouina="" "="" tunisie;="" tunis;="" salon="" ;="" et="" decoration'="">
 <link rel="stylesheet" href="files/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/recherche.css">
 <link rel="Stylesheet" href="files/layout_fr.css" type="text/css">
@@ -52,6 +125,7 @@ if(isset($_POST['search']))
 <link rel="Stylesheet" href="files/top_menu.css" type="text/css">
 <link rel="Stylesheet" href="files/main_menu1.css" type="text/css">
 <link rel="Stylesheet" href="files/main_menu2.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/styleP.css">
 <link rel="Stylesheet" href="files/menu_rsp.css" type="text/css">
 <link rel="Stylesheet" href="files/searchbox.css" type="text/css">
 <link rel="Stylesheet" href="files/langselector.css" type="text/css">
@@ -303,7 +377,26 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
 					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/services"><span class="rmText">Services</span></a></li>
                     <li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="contact.html"><span class="rmText">Contact</span></a></li>
-				</ul><input id="ctl14_rm_Menu_3_ClientState" name="ctl14_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
+                    <li class="rmItem rmLast">
+    <a class="rmLink rmRootLink item" href="checkout.html"><span class="rmText">Panier</span></a>
+</li>
+<li class="rmItem rmFirst">
+<a href="checkout.html">
+<span class="rmText"><h5> (<span id="simpleCart_quantity" class="simpleCart_quantity">
+                        <?php
+                          $produit=new produitC;
+                          $count=$produit->countpanier($_SESSION['id']);
+                          foreach($count as $row)
+                            {
+                              echo $row["cnt"];
+                            }
+                          ?>
+                    </span> items)<img src="images/b.png" height="25" width="25" alt=""></h5></span>
+</a>
+
+</li>
+				</ul>
+                <input id="ctl14_rm_Menu_3_ClientState" name="ctl14_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
 			</div>
         
 		</div>
@@ -330,7 +423,7 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
                     <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">Accueil</span></a>
                     </li>
                     <li class="rmItem rmLast"><a class="rmLink rmRootLink  item  link_prod" href="http://www.wapi.com/fr/produits/produits"><span class="rmText">cuisine</span></a></li>
-                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="http://www.wapi.com/fr/accueil"><span class="rmText">salon</span></a>
+                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="salon.html"><span class="rmText">salon</span></a>
                     </li>
                     <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">meubles</span></a>
                     </li>
@@ -417,43 +510,55 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
                             
 <div class="content_inter">
 <div class="clear">&nbsp;</div>
-<div class="frame_service">
+<div class="frame_service" >
 <div id="ctl02_pnl_Products_List">
 		 <?PHP
              foreach($listePromotion as $row){
-           
-         ?>
-    <div id="ctl02_upnl_Widget">
-			
-            <div id="WG_list_promo">
-                <div id="ctl02_pnl_Main_Frame">
-				
-                
-			</div>
-                <div id="ctl02_pnl_Widget_Frame">
-				<div class="col-md-4 col-sm-4 col-xs-6 frame_prod">
-					<div class="prod">
-						<div class="frame_imge">
-							<?php 
-              $image_id=$row['article'] ;
-            echo '<img class="img-responsive" alt="a" src="'.$image_id.'" />' ?>
-<div class="hover_prod">
-								<a class="link_prode" href="">Voir détails</a><div class="sep_dotted">
+                ?>
+                <div class="product-thumb">
+                    <div class="product-thumb-image" >
+                        <?PHP
+     $image_id=$row['article'] ;
+    echo '<img class="img-responsive" alt="a" src="'.$image_id.'" />'
+                        ?>
+                <div class="quickview-title">Voir detail</div>
+                 </div>
+                 <div class="product-thumb-title">
+                     <h3><?PHP echo $row['nom']; ?></h3>
+                     <h3>Prix : <span><?PHP echo $row['nprix']; ?> DT Seulement</span></h3>
+                 </div>
+                </div>	
+                <div class="product-view" >
+                  <div class="close-btn">X</div>
+                  <div class="product-big-image">
+                    <?PHP
+     $image_id=$row['article'] ;
+    echo '<img class="img-responsive" alt="a" src="'.$image_id.'" />'
+                        ?>
+                  </div>
+                  <div class="product-big-desc">
+                    <h2><?PHP echo $row['nom']; ?></h2>
+                    <h5>Code du produit : <?PHP echo $row['id']; ?></h5>
+                    <h5>Categorie : <?PHP echo $row['categorie']; ?> </h5>
+                    <h5>Description :<?PHP echo $row['description']; ?></h5>
+                    
 
-								</div>
-							</div>
-						</div><div class="frame_name">
-							<a class="name_prod" href=""><?php echo $row['nom'] ;?></a>
-						</div>
-					</div>
-				</div>
-			</div>
-            </div>
+        <div class="price">
+<h4 class="oldprice"><del>Rs.<?PHP echo $row['aprix']; ?>DT</del><sup><i><?PHP echo $row['taux']; ?>% OFF</i></sup></h4>
+<h4 class="newprice">Rs.<?PHP echo $row['aprix']; ?> DT</h4>
+        </div>
+        <form method="POST" action="?ida=<?PHP echo $row['id']; ?>">
+        <h5>Quantité :<input placeholder="Qt." required type="number" name="q1" value="1" min="1" max="100"/></h5><br><br>
+          <button name="ajouterproduit1"class="buybutton">Ajouter au panier</button>
+        </form>
         
-		</div>
+
+            </div>
+        </div>        
+		
  <?PHP
 }
-?>
+?>  </div>
 	</div>
 
 <div id="ctl00_pnl_Paginator">
@@ -707,4 +812,22 @@ Sys.Application.add_init(function() {
 </form>
 
 
-<iframe scrolling="no" frameborder="0" allowtransparency="true" src="files/widget_iframe.2e9f365dae390394eb8d923cba8c5b11.html" title="Twitter settings iframe" style="display: none;"></iframe></body></html>
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="files/widget_iframe.2e9f365dae390394eb8d923cba8c5b11.html" title="Twitter settings iframe" style="display: none;"></iframe>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$('.quickview-title').click(function(){
+var $productview = $(this).parent().parent().next() ;
+$($productview).fadeIn('1000') ;
+});
+$('.close-btn').click(function(){
+   var $closebtn = $(this).parent() ;
+   $($closebtn).fadeOut('800') ;
+});
+});
+</script>
+
+</body></html>
+<?php 
+} 
+?>

@@ -72,6 +72,27 @@ $listepromotion =$pC->getPromotion($editid);
                                                     <td>Date de fin</td>
                                                     <td><?php echo $row['date_f'];?></td>
                                                 </tr>
+                                                <tr>
+                                                    <td>Categorie</td>
+                                                    <td><?php echo $row['categorie'];?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ancien pric</td>
+                                                    <td><?php echo $row['aprix'];?>DT.</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>Nouveau prix </td>
+                                                    <td><?php echo $row['nprix'];?>DT.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Taux de la promotion </td>
+                                                    <td><?php echo $row['taux'];?>%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Quantiter</td>
+                                                    <td><?php echo $row['qt'];?></td>
+                                                </tr>
 
                                                     <br>
                                                     <td>Dercription</td>

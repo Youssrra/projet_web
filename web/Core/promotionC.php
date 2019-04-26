@@ -3,19 +3,29 @@
 class PromotionC {
 	
 		public function ajouterP($p){
-		
-    
+	
+
 try {
 	
  $dbcon = config::getConnexion();
 
 
-	$stmt = $dbcon->prepare("insert into promotion (nom,article,date_d,date_f,description) values (:nom,:article,:date_d,:date_f,:description)") ;
+	$stmt = $dbcon->prepare("insert into promotion 
+(nom,article,date_d,date_f,description,nprix,aprix,taux,categorie,qt)values(:nom,:article,:date_d,:date_f,:description,:np,:ap,:taux,:categorie,:quantite)") ;
     $nom=$p->getNom();
     $article=$p->getArticle();
     $date_d=$p->getDateD();
     $date_f=$p->getDateF();
     $description=$p->getDescription();
+    $quantite=$p->getQuantite();
+	$categorie=$p->getCategorie()  ;
+    $ap=$p->getAP() ;
+	$np =$p->getNP() ;
+
+	$num1 = (double) $ap;
+	$num2 = (float) $np;
+
+	$taux=(($ap-$num2)*100)/$ap ;
 
     $article="image_promotion/".$article ;
 	$stmt->bindParam(":nom",$nom) ;
@@ -23,6 +33,11 @@ try {
 	$stmt->bindParam(":date_d", $date_d) ;
 	$stmt->bindParam(":date_f", $date_f) ;
 	$stmt->bindParam(":description", $description) ;
+	$stmt->bindParam(":np", $num2) ;
+	$stmt->bindParam(":ap", $ap) ;
+	$stmt->bindParam(":taux", $taux) ;
+$stmt->bindParam(":categorie", $categorie) ;
+	$stmt->bindParam(":quantite", $quantite) ;
 	$stmt->execute() ;
 }
 catch (PDOException $e) {
@@ -30,6 +45,8 @@ catch (PDOException $e) {
   die() ;
 }
 }
+
+
 
 	function getAllPromotion(){
 		$sql="SElECT * From promotion";
@@ -60,7 +77,8 @@ catch (PDOException $e) {
 	
 
 	function getAllPromotionS($keywords){
-		$sql="SELECT * FROM promotion WHERE CONCAT(`id`, `nom`, `date_d`,`article`, `date_f` ,`description`) LIKE '%".$keywords."%'";
+		$sql="SELECT * FROM promotion WHERE CONCAT(`id`,`taux`,`categorie`,`quantite`,`ap`,`np`,`nom`, `date_d`,`article`, `date_f` ,`description`) LIKE '%".$keywords."%'";
+
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);

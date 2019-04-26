@@ -135,6 +135,91 @@
 
 
                                                 <hr>
+                                                             <div class="card-body card-block">
+                                       
+                                            <div class="row form-group">
+                                                
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Ancien prix</label>
+                                                </div>
+                                                </div>
+
+                                                   <div class="row form-group" style="width: 1100px;">
+                                               
+                                                <div class="col-12 col-md-9" style="width: 800px;">
+                                                    <input type="text" id="text-input"  name="ap" placeholder="Ancien prix .." class="form-control" required="required" value="<?php echo $row['aprix'];?>" >
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="card-body card-block">
+                                       
+                                            <div class="row form-group">
+                                                
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Nouveau prix</label>
+                                                </div>
+                                                </div>
+
+                                                   <div class="row form-group" style="width: 1100px;">
+                                               
+                                                <div class="col-12 col-md-9" style="width: 800px;">
+                                                    <input type="text" id="text-input"  name="np" placeholder="Ancien prix .." class="form-control" required="required" value="<?php echo $row['nprix'];?>">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="card-body card-block">
+                                       
+                                            <div class="row form-group">
+                                                
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Quantité disponible </label>
+                                                </div>
+                                                </div>
+
+                                                   <div class="row form-group" style="width: 1100px;">
+                                               
+                                                <div class="col-12 col-md-9" style="width: 800px;">
+                                                    <input type="number" name="quantite" placeholder="Quantité disponible.." class="form-control" required="required" min="1" value="1" value="<?php echo $row['qt'];?>">
+
+                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                         <div class="col col-md-3">
+                                                    <label class=" form-control-label">Categorie</label>
+                                                </div>
+
+
+                                        <select class="form-control" name="categorie" value="<?php echo $row['categorie'];?>">
+                                        <option  value="Categorie">Categorie</option>
+                                        <option  value="Sallon"   >Sallon</option>
+                                        <option  value="Chambre"   >Chambre</option>
+                                        <option  value="Salle de bain">Salle de bain</option>
+                                        <option  value="Cuisine">Cuisine</option>
+                                        </select>
+                                                <hr>
+
+                                                <div class="card-body card-block">
+                                                 <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Description</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="desc" id="textarea-input" rows="9" placeholder="Contenue..." class="form-control"></textarea>
+                                                </div>
+                                            </div>   
+                                        </div>
+
+                                                <hr>
 
                                                 <div class="card-body card-block">
                                                  <div class="row form-group">
