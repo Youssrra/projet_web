@@ -24,6 +24,15 @@ else
 {
     $listepromotion =$pC->getAllPromotion();
 }
+if(isset($_POST['pdf']))
+{
+$path="imprimer_all.php";
+    header("Location:".$path);
+}
+else if(isset($_POST['satat']))
+{
+    header("Location:statistique.php");
+}
 ?>
 <!DOCTYPE html>
     <!-- Required meta tags-->
@@ -56,13 +65,13 @@ else
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
- <!-- Pop up script -->    
-<script language="JavaScript">
-
+ <!-- Pdf -->    
+<script type="text/javascript">
+function change()
+{
+    document.scriptform.submit();
+}
 </script>
-
-
- <!-- End of popp uos-->
 </head>
 
 <body class="animsition">
@@ -246,9 +255,7 @@ else
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                                                    </a>
+                                                    
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
@@ -322,21 +329,33 @@ else
                                        
 
                                              </form>
-
-                                    </div>
+ 
                                 
+                                    </div>
+
+                                    
                                     <div class="table-data__tool-right">
+                                        <button type=button style="" onClick="javascript:popUp('statistique.php') " size="7px ">
+
+                                            <i class="far fa-chart-bar fa-2x"></i></button>
+
                                         <input class="au-btn au-btn-icon au-btn--green au-btn--small" type=button value="Ajouter" onClick="javascript:popUp('ajout_promotion.php')">
 
-                                            
 
-                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                            <select class="js-select2" name="type">
+
+
+                                            
+                                        
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2"><form method="post" name="scriptform">
+                                            <select class="js-select2" name="pdf" onChange="change(this.value)">
                                                 <option >Exporter</option>
-                                                <option value="">PDF</option>
+                                                <option value="pdf" >PDF</option>
                                             </select>
-                                            <div class="dropDownSelect2"></div>
+                                            <div class="dropDownSelect2"></div></form>
                                         </div>
+
+                                       
+
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
@@ -349,6 +368,7 @@ else
                                                 <th>date debut</th>
                                                 <th>date fin</th>
                                                 <th>Description</th>
+                                                <th>Taux</th>
                                             
                                         </thead>
                                         <tbody>
@@ -364,6 +384,7 @@ else
                                                  <td><?php echo $row['date_d'];?></td>
                                                <td><?php echo $row['date_f'];?></td>
                                                    <td><?php echo $row['description'];?></td>
+                                                   <td><?php echo $row['taux'];?>%</td>
 
                                                 
                                                 <td>
@@ -390,6 +411,12 @@ else
     
 </a>
  </button>
+
+<button class="item" ata-toggle="tooltip" data-placement="top" title="PDF" name="imprimer" >
+<a href="imprimer.php?detid=<?php echo $row['id'];?>" target="_blank">
+    <i class="zmdi zmdi-file"></i>
+</button>
+
 
                                                         
                                                     </div>

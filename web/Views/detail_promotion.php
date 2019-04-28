@@ -65,7 +65,7 @@ $listepromotion =$pC->getPromotion($editid);
 
                                                 <tr>
                                                     <td>Date de debut</td>
-                                                    <td><?php echo $row['date_d'];?>></td>
+                                                    <td><?php echo $row['date_d'];?></td>
                                                 </tr>
 
                                                 <tr>

@@ -20,9 +20,9 @@ if(isset($_POST['ajouterproduit1']) && (isset ($_POST['q1'])))
   $q1=$_POST['q1'];
   $id_display=$_GET["ida"];
   $produit1C=new produitC();
-  $produit1=$produit1C->recupererproduit_ajout($id_display);
+  $produit1=$produit1C->recupererproduit_ajoutP($id_display);
   $info=$produit1->fetch();
-  $produit1=new produit($info["id"],$info["nom"],$info["prix"],$info["quantite"],$info["categorie"]);
+  $produit1=new produit($info["id"],$info["nom"],$info["nprix"],$info["qt"],$info["categorie"]);
   $quantitedisponible=$produit1->get_quantite();
   $verif=0;
   if($q1>$quantitedisponible)
@@ -61,9 +61,9 @@ if(isset($_POST['ajouterwishlist2']))
 { 
   $id_display=$_GET["wishlist"];
   $produit1C=new produitC();
-  $produit1=$produit1C->recupererproduit_ajout($id_display);
+  $produit1=$produit1C->recupererproduit_ajoutP($id_display);
   $info=$produit1->fetch();
-  $produit1=new produit($info["id"],$info["nom"],$info["prix"],$info["quantite"],$info["categorie"]);
+  $produit1=new produit($info["id"],$info["nom"],$info["nprix"],$info["qt"],$info["categorie"]);
   $verif=0;
   if($verif==0)
   {
@@ -241,106 +241,10 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 <span class="line-three"></span>
 </div>
 <div class="container">
-<div class="frame_list_menu">
-<a href="http://www.meubleskarray.com/fr/produits/sejour" class="title_liste_menu">Séjours</a>
-<div id="ctl04_pnl_Menu_3">
-		
-    <div id="menu_prod1">
-        <div id="ctl04_pnl_Main_Frame">
-			
-            <div id="ctl04_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menup" style="height: 0px; width: 0px; z-index: 7000;">
-				<!-- 2015.3.930.45 --><ul class="rmRootGroup rmToggleHandles rmVertical">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/canapes"><span class="rmText">canapés</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/canapes-angle"><span class="rmText">canapés d'angle</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/fauteuils"><span class="rmText">fauteuils</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/pouf"><span class="rmText">Pouf</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/bibliotheques"><span class="rmText">Bibliothéques</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/tables_basses"><span class="rmText">Tables basses</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/tables_appoint"><span class="rmText">Tables d'appoints</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/consoles"><span class="rmText">Consoles</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/meubles-tv"><span class="rmText">Meubles TV</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/meubles-bar"><span class="rmText">meubles bar</span></a></li>
-				</ul><script type="text/javascript">
-					Telerik.Web.UI.RadMenu._adjustRootItemWidth("ctl04_rm_Menu_3");
-				</script><input id="ctl04_rm_Menu_3_ClientState" name="ctl04_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
-			</div>
-        
-		</div>
-    </div>
 
-	</div>
-</div>
-<div class="frame_list_menu">
-<a href="http://www.meubleskarray.com/fr/produits/salle_manger" class="title_liste_menu">Salle à manger</a>
-<div id="ctl06_pnl_Menu_3">
-		
-    <div id="menu_prod2">
-        <div id="ctl06_pnl_Main_Frame">
-			
-            <div id="ctl06_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menup" style="height: 0px; width: 0px; z-index: 7000;">
-				<ul class="rmRootGroup rmToggleHandles rmVertical">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/tables-de-repas"><span class="rmText">Tables de repas</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/chaises-et-tabourets"><span class="rmText">Chaises et tabourets</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/bahuts"><span class="rmText">Bahuts</span></a></li>
-				</ul><script type="text/javascript">
-					Telerik.Web.UI.RadMenu._adjustRootItemWidth("ctl06_rm_Menu_3");
-				</script><input id="ctl06_rm_Menu_3_ClientState" name="ctl06_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
-			</div>
-        
-		</div>
-    </div>
 
-	</div>
-</div>
-<div class="frame_list_menu">
-<a href="http://www.meubleskarray.com/fr/produits/espace_nuit" class="title_liste_menu">Espace nuit</a>
-<div id="ctl08_pnl_Menu_3">
-		
-    <div id="menu_prod3">
-        <div id="ctl08_pnl_Main_Frame">
-			
-            <div id="ctl08_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menup" style="height: 0px; width: 0px; z-index: 7000;">
-				<ul class="rmRootGroup rmToggleHandles rmVertical">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/chambre_a_coucher"><span class="rmText">Chambre à Coucher</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/lit"><span class="rmText">Lits</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/table_nuit"><span class="rmText">Tables de nuit</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/commodes-et-complements"><span class="rmText">commodes et compléments</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/semainiers"><span class="rmText">semainiers</span></a></li>
-				</ul><script type="text/javascript">
-					Telerik.Web.UI.RadMenu._adjustRootItemWidth("ctl08_rm_Menu_3");
-				</script><input id="ctl08_rm_Menu_3_ClientState" name="ctl08_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
-			</div>
-        
-		</div>
-    </div>
 
-	</div>
-</div>
-<div class="frame_list_menu">
-<a href="http://www.meubleskarray.com/fr/produits/accessoires" class="title_liste_menu">Accessoires</a>
-<div id="ctl10_pnl_Menu_3">
-		
-    <div id="menu_prod4">
-        <div id="ctl10_pnl_Main_Frame">
-			
-            <div id="ctl10_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menup" style="height: 0px; width: 0px; z-index: 7000;">
-				<ul class="rmRootGroup rmToggleHandles rmVertical">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/bureaux"><span class="rmText">bureaux</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/miroirs"><span class="rmText">miroirs</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/tableaux"><span class="rmText">tableaux</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/coussins"><span class="rmText">Coussins</span></a></li>
-				</ul><script type="text/javascript">
-					Telerik.Web.UI.RadMenu._adjustRootItemWidth("ctl10_rm_Menu_3");
-				</script><input id="ctl10_rm_Menu_3_ClientState" name="ctl10_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
-			</div>
-        
-		</div>
-    </div>
 
-	</div>
-</div>
-<div class="frame_list_menu">
-<a href="http://www.meubleskarray.com/fr/produits/mobilers_exterieur" class="title_liste_menu">mobiliers d'extérieur</a>
-<div id="ctl12_pnl_Menu_3">
-		
-    <div id="menu_prod5">
-        <div id="ctl12_pnl_Main_Frame">
-			
-            <div id="ctl12_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menup" style="height: 0px; width: 0px; z-index: 7000;">
-				<ul class="rmRootGroup rmToggleHandles rmVertical">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/bar"><span class="rmText">Bar</span></a></li><li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/chaise_long"><span class="rmText">Chaise long</span></a></li><li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="http://www.meubleskarray.com/fr/produits/chaise_bar"><span class="rmText">Chaise bar</span></a></li>
-				</ul><script type="text/javascript">
-					Telerik.Web.UI.RadMenu._adjustRootItemWidth("ctl12_rm_Menu_3");
-				</script><input id="ctl12_rm_Menu_3_ClientState" name="ctl12_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
-			</div>
-        
-		</div>
-    </div>
-
-	</div>
-</div>
 </div>
 </div>
 <!-- cd-cart -->
@@ -422,10 +326,12 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
                 <ul class="rmRootGroup rmToggleHandles rmHorizontal">
                     <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">Accueil</span></a>
                     </li>
-                    <li class="rmItem rmLast"><a class="rmLink rmRootLink  item  link_prod" href="http://www.wapi.com/fr/produits/produits"><span class="rmText">cuisine</span></a></li>
+                
+                <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="cuisine.html"><span class="rmText">cuisine</span></a>
+                    </li>
                     <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="salon.html"><span class="rmText">salon</span></a>
                     </li>
-                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">meubles</span></a>
+                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="meuble.html"><span class="rmText">meubles</span></a>
                     </li>
 
                 </ul><input id="ctl18_rm_Menu_3_ClientState" name="ctl18_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
@@ -447,9 +353,9 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
             
             <div id="ctl20_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menu" style="height: 0px; width: 0px; z-index: 7000;">
                 <ul class="rmRootGroup rmToggleHandles rmHorizontal">
-                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">accessoire & decoration</span></a></li>
-                    <li class="rmItem "><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/promotions"><span class="rmText">Promotions</span></a></li>
-                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">dressing</span></a></li>
+                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="accessoire#"><span class="rmText">accessoire & decoration</span></a></li>
+                    <li class="rmItem "><a class="rmLink rmRootLink item" href="Wapi_Accueil#"><span class="rmText">Promotions</span></a></li>
+                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="dressing#"><span class="rmText">dressing</span></a></li>
                     
                 </ul><input id="ctl20_rm_Menu_3_ClientState" name="ctl20_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
             </div>

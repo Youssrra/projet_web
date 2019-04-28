@@ -277,9 +277,6 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/services"><span class="rmText">Services</span></a></li>
 					<li class="rmItem rmLast"><a class="rmLink rmRootLink item" href="contact.html"><span class="rmText">Contact</span></a></li>
 
-                    <li class="rmItem rmLast">
-    <a class="rmLink rmRootLink item" href="checkout.html"><span class="rmText">Panier</span></a>
-</li>
 
                     <li class="rmItem rmFirst">
 <a href="checkout.html">
@@ -306,57 +303,8 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 	</div>
 </div>
 
- <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown"><i class="fas fa-sign-in-alt"></i><span class="caret"></span></a>
-          <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <h3><b>Se connecter</b></h3></div>
-                <div class="form-group">
-                  <label for="username">Nom d'utilisateur</label>
-                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom d'utilisateur" value="" autocomplete="off">
-                </div>
 
-                <div class="form-group">
-                  <label for="password">Mot de passe</label>
-                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mot de passe" autocomplete="off">
-                </div>
 
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-xs-7">
-                      <input type="checkbox" tabindex="3" name="remember" id="remember">
-                      <label for="remember">Se souvenir de moi</label>
-                    </div>
-                    <div class="col-xs-5 pull-right">
-                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" style="background-color: #000000;" value="Connexion">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="text-center">
-                        <a href="pwd_oublier.html" tabindex="5" class="forgot-password">Mot de passe oublier?</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="text-center">
-                        <a href="cree_compte.html" tabindex="5" class="forgot-password">Crée un compte</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
-            </div>
-          </ul>
-        </li>
-      </ul>
- 
 
 </div>
 </div>
@@ -375,8 +323,10 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
 					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">Accueil</span></a>
 					</li>
-					<li class="rmItem rmLast"><a class="rmLink rmRootLink  item  link_prod" href="http://www.wapi.com/fr/produits/produits"><span class="rmText">cuisine</span></a></li>
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">salon</span></a>
+					
+                    <li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="salon.html"><span class="rmText">cuisine</span></a>
+                    </li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="salon.html"><span class="rmText">salon</span></a>
 					</li>
 					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item rmSelected item_hover" href="Wapi_Accueil.html"><span class="rmText">meubles</span></a>
 					</li>
@@ -400,9 +350,9 @@ Sys.WebForms.PageRequestManager._initialize('scriptmanager1', 'form1', ['tctl00$
 			
             <div id="ctl20_rm_Menu_3" class="RadMenu RadMenu_Metro rmSized menu" style="height: 0px; width: 0px; z-index: 7000;">
 				<ul class="rmRootGroup rmToggleHandles rmHorizontal">
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">accessoire & decoration</span></a></li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="accessoire#"><span class="rmText">accessoire & decoration</span></a></li>
 					<li class="rmItem "><a class="rmLink rmRootLink item" href="Promotions.html"><span class="rmText">Promotions</span></a></li>
-					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="http://www.wapi.com/fr/showroom"><span class="rmText">dressing</span></a></li>
+					<li class="rmItem rmFirst"><a class="rmLink rmRootLink item" href="dressing#"><span class="rmText">dressing</span></a></li>
 					
 				</ul><input id="ctl20_rm_Menu_3_ClientState" name="ctl20_rm_Menu_3_ClientState" type="hidden" autocomplete="off">
 			</div>
@@ -484,7 +434,7 @@ des salons hauts de gamme </h1>
 des salons hauts de gamme </h1>
 <div class="sep_dotted">&nbsp;</div>
 <div class="btn_white btn_center ">
-<a href="http://www.wapi.com/fr/produits/canapes" class="link_white">Plus d'information</a>
+<a href="salon#" class="link_white">Plus d'information</a>
 </div></div>
 <div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
 <div class="caption  sft start noFilterClass" data-x="" data-y="" data-speed="" data-start="" data-easing="easeOutBack" style="opacity: 1; filter: inherit; transform: skewX(0deg) scale(1, 1) rotate(0deg) translate(0px, 0px) rotateX(0deg) rotateY(0deg); font-size: 16px; padding: 0px; margin: 0px; border-width: 0px; line-height: 20px; white-space: nowrap; min-width: 0px; min-height: 0px; left: 0px; top: 0px; visibility: visible;"></div>
@@ -577,7 +527,7 @@ Nos <span class="bold"> actualités</span>
                                 <a href="http://www.wapi.com/fr/actualite/act2">
                                 
 
-            echo '<img class="img-responsive" alt="<?php echo $row['image'] ; ?>"" src="image_pub/<?php echo $row['image'] ; ?>" />' ?>
+            <img class="img-responsive" alt="<?php echo $row['image'] ; ?>"" src="image_pub/<?php echo $row['image'] ; ?>" />
 
                                 </a>
                             
@@ -601,10 +551,14 @@ Nos <span class="bold"> actualités</span>
                                 </div><span id="ctl02_lbl_ShortDescription_0" class="desc_act"><p><?php echo $row['desc_pub'];?></p>
 <p>Wapi</p></span><div class="clear">
 
-                                </div><div class="btn_white_border btn_center">
-                                    <a class="link_white_border" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" >Like</a>
-
                                 </div>
+ <form method="POST" action="nombrelike.php?id=<?PHP echo $row['id_pub']; ?>" >
+     </form>
+
+                               <form method="POST" action="nombrelike.php?id=<?PHP echo $row['id_pub']; ?>" >
+                                        <button  style="margin-top: 20px;" type="submit" name="like" class="btn karl-btn" data-animation="fadeInUp" data-delay="1s" data-duration="500ms" >like</button>
+                                    </form>
+
                                 <!-- Modal -->
                     </div>
 
@@ -631,13 +585,6 @@ Nos <span class="bold"> actualités</span>
 
 
 <!---------------------------------- EVENEMENT ------------------------------------------ --->
-
-
-
-
-
-
-
 <section class="cd-section">
 <div class="" style="opacity: 1; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; transform: translateY(100vh) scale(1);">
 <div class="top_title_frame">
@@ -760,6 +707,27 @@ Nos <span class="bold"> événement</span>
                                         </table>
                                     </div>
       </div>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect> Launch demo modal</button >
+<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+   aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>OK!</button>
+            </div>
+        </div>
+    </div >
+</div >
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
          <a href="inscription_evenement.php?detid=<?php echo $row['id'];?> "

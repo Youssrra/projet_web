@@ -56,6 +56,8 @@ catch (PDOException $e) {
         }	
 	}
 
+	
+
 	function getAllEvenementS($keywords){
 		$sql="SELECT * FROM event WHERE CONCAT(`id`, `nom`, `date_d`,`image`, `date_f` ,`description`,`optionn`,`fin_insc`,`etat`,`ville`,`nb_insc`,`addrese`) LIKE '%".$keywords."%'";
 		$db = config::getConnexion();
